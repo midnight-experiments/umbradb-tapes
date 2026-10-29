@@ -26,7 +26,7 @@ Total: **295,505,367 bytes**. The two historical Mainnet ranges intentionally sh
 
 ## Download and verify
 
-Download the desired `.tape.jsonl` assets, `manifest.json`, and `SHA256SUMS` from the collection release. The same manifest and checksums are committed under [`releases/v0.10.0-rc.1/`](releases/v0.10.0-rc.1/).
+Download the desired `.tape.jsonl` assets, `manifest.json`, and `SHA256SUMS` from the [0.10.0-rc.1 release](https://github.com/midnight-experiments/umbradb-tapes/releases/tag/v0.10.0-rc.1). The [collection tag](https://github.com/midnight-experiments/umbradb-tapes/tree/v0.10.0-rc.1) pins the original seven-tape inventory. The same manifest and checksums are committed under [`releases/v0.10.0-rc.1/`](releases/v0.10.0-rc.1/).
 
 For the full collection, run this in the download directory:
 
