@@ -1,0 +1,629 @@
+{
+  "schemaVersion": 1,
+  "format": "umbradb-tape-jsonl",
+  "collectionVersion": "0.10.0-rc.1",
+  "releaseTag": "v0.10.0-rc.1",
+  "sourceRepository": "https://github.com/midnightntwrk/umbradb",
+  "collectionSourceCommit": "8dcc9f30e41fe78c884a05d61ca06e10d7c0f373",
+  "collectionSourcePackageVersion": "0.10.0",
+  "provenance": "These historical tapes were recorded on 2026-10-26 with development-package version 0.9.5 and retained as fixtures in the 0.10.0-rc.1 collection. They were not re-recorded with rc.1. The original lane commit abbreviations and full integrated commits are recorded separately. Filenames may change; tape bytes and SHA-256 identities are preserved.",
+  "tapes": [
+    {
+      "file": "mainnet-1774000-1780000.tape.jsonl",
+      "originalFile": "mainnet-1774000-1780000.tape.jsonl",
+      "network": "mainnet",
+      "start": 1774000,
+      "end": 1780000,
+      "endpointsInclusive": true,
+      "bytes": 36412864,
+      "sha256": "a99d684b29f17ec1bba0ffaf6f4b1a04992e80bb216f67f5322b565b01328469",
+      "records": 36034,
+      "source": {
+        "endpoint": "wss://rpc.mainnet.midnight.network",
+        "nodeVersion": "1.0.400-c338b9ac",
+        "recorded": "2026-10-26"
+      },
+      "recorder": {
+        "packageVersion": "0.9.5",
+        "developmentSnapshot": true,
+        "originalLaneCommitAbbreviation": "b79ab0d",
+        "integratedSourceCommit": "0e81e0f0ae96fed19268ba8ca497fe26ee554b53",
+        "provenanceNote": "Historical task records identify the original lane commit by abbreviation. Full integrated commit identifies the retained source after integration, not the exact original recording checkout."
+      },
+      "historicalManifest": {
+        "name": "mainnet-1774000-1780000",
+        "file": "mainnet-1774000-1780000.tape.jsonl",
+        "network": "mainnet",
+        "from": 1774000,
+        "to": 1780000,
+        "sha256": "a99d684b29f17ec1bba0ffaf6f4b1a04992e80bb216f67f5322b565b01328469",
+        "bytes": 36412864,
+        "records": 36034,
+        "source": {
+          "endpoint": "wss://rpc.mainnet.midnight.network",
+          "nodeVersion": "1.0.400-c338b9ac",
+          "recorded": "2026-10-26"
+        },
+        "bounds": "From 491 blocks before mainnet's 1.0 upgrade to 1,780,000, the end A99 names: U 1,774,491 (0x40e3…dd23, MNSV 22_000; its block carries the runtime, 1.1 MB) and F 1,774,492 (0x3802…1a0b, MNSV 1_000_000), the LG-2 pin; 91 blocks with Midnight transactions on both sides (ContractCall 86, ContractDeploy 2, unshielded transfers 3), one failed extrinsic (1,774,005, a FederatedAuthority governance call, not a Midnight transaction) and 31 system transactions. It starts mid-chain: decoding, events, outcomes and the pin need nothing else, but A99's state roots need the ledger state at 1,774,000 (A99's \"from a backup taken before block 1,774,492\").",
+        "notes": {
+          "recordedWith": "npx tsx tools/tape/main.ts range --node wss://rpc.mainnet.midnight.network --from 1774000 --to 1780000 --live-seconds 60 (concurrency 8, 500 heights a connection)",
+          "requests": 36012,
+          "seconds": 1176.6,
+          "requestsPerSecond": 30.6,
+          "heightsPerSecond": 5.1,
+          "chunksRecordedAgain": 0,
+          "liveWindowSeconds": 60,
+          "runtimes": [
+            {
+              "height": 1774000,
+              "specVersion": 22000
+            },
+            {
+              "height": 1774491,
+              "specVersion": 1000000
+            }
+          ],
+          "metadataHeights": [
+            1774000,
+            1774491
+          ],
+          "boundaries": [
+            {
+              "u": {
+                "height": 1774491,
+                "hash": "0x40e3f67939e6f53e9f36b0a19fd27d484d29c008698f3a2336c5f2529a85dd23",
+                "specVersion": 22000
+              },
+              "f": {
+                "height": 1774492,
+                "hash": "0x380266656e11208adbcaa5ab62a6beb9c09ef86de1cb886eac721099177a1a0b",
+                "specVersion": 1000000
+              }
+            }
+          ],
+          "blocksWithMidnightTransactions": 91,
+          "eventKinds": {
+            "Midnight.TxApplied": 91,
+            "Midnight.ContractCall": 86,
+            "Midnight.ContractDeploy": 2,
+            "Midnight.UnshieldedTokens": 3,
+            "MidnightSystem.SystemTransactionApplied": 31,
+            "CNightObservation.SystemTransactionApplied": 31,
+            "System.ExtrinsicFailed": 1,
+            "System.CodeUpdated": 1
+          },
+          "servesOnItsOwn": "decoding, events and outcomes across the 0.22 to 1.0 upgrade (A89, A91 on mainnet), the 1,774,492 pin (A94)",
+          "needs": "the ledger state at 1,774,000 for state roots (A99 mainnet half: a backup made by a sync from genesis, tasks 15.1, 18.x)"
+        }
+      }
+    },
+    {
+      "file": "mainnet-1780000-1790000.tape.jsonl",
+      "originalFile": "mainnet-1780000-1790000.tape.jsonl",
+      "network": "mainnet",
+      "start": 1780000,
+      "end": 1790000,
+      "endpointsInclusive": true,
+      "bytes": 87118415,
+      "sha256": "d3953ab884ff2b8155103964205533d05dd37ef6fd692c4d59b9a607f448d388",
+      "records": 60033,
+      "source": {
+        "endpoint": "wss://rpc.mainnet.midnight.network",
+        "nodeVersion": "1.0.400-c338b9ac",
+        "recorded": "2026-10-26"
+      },
+      "recorder": {
+        "packageVersion": "0.9.5",
+        "developmentSnapshot": true,
+        "originalLaneCommitAbbreviation": "b79ab0d",
+        "integratedSourceCommit": "0e81e0f0ae96fed19268ba8ca497fe26ee554b53",
+        "provenanceNote": "Historical task records identify the original lane commit by abbreviation. Full integrated commit identifies the retained source after integration, not the exact original recording checkout."
+      },
+      "historicalManifest": {
+        "name": "mainnet-1780000-1790000",
+        "file": "mainnet-1780000-1790000.tape.jsonl",
+        "network": "mainnet",
+        "from": 1780000,
+        "to": 1790000,
+        "sha256": "d3953ab884ff2b8155103964205533d05dd37ef6fd692c4d59b9a607f448d388",
+        "bytes": 87118415,
+        "records": 60033,
+        "source": {
+          "endpoint": "wss://rpc.mainnet.midnight.network",
+          "nodeVersion": "1.0.400-c338b9ac",
+          "recorded": "2026-10-26"
+        },
+        "bounds": "Contiguous with mainnet-1774000-1780000 (its first block is that tape's last, so a process restarted at cursor 1,780,000 continues on this tape) through LG-8's scenario block 1,788,980 (0x627e…0cf5, a block with a Midnight contract call) and 1,020 blocks beyond it, all of runtime 1_000_000; 278 blocks carry Midnight transactions (281 contract calls, 1 maintenance) and 508 the node's own system transactions. One backup at 1,774,000 serves both mainnet tapes in turn. It starts mid-chain: decoding, events and outcomes need nothing else, but A99's state roots need the ledger state at 1,780,000.",
+        "notes": {
+          "recordedWith": "npx tsx tools/tape/main.ts range --node wss://rpc.mainnet.midnight.network --from 1780000 --to 1790000 --live-seconds 60 (concurrency 8, 500 heights a connection)",
+          "requests": 60011,
+          "seconds": 1915.6,
+          "requestsPerSecond": 31.3,
+          "heightsPerSecond": 5.2,
+          "chunksRecordedAgain": 0,
+          "liveWindowSeconds": 60,
+          "runtimes": [
+            {
+              "height": 1780000,
+              "specVersion": 1000000
+            }
+          ],
+          "metadataHeights": [
+            1780000
+          ],
+          "boundaries": [],
+          "blocksWithMidnightTransactions": 278,
+          "eventKinds": {
+            "Midnight.TxApplied": 282,
+            "Midnight.ContractCall": 281,
+            "Midnight.ContractMaintain": 1,
+            "MidnightSystem.SystemTransactionApplied": 508,
+            "CNightObservation.SystemTransactionApplied": 508,
+            "CNightObservation.Registration": 7,
+            "CNightObservation.Deregistration": 6,
+            "CNightObservation.MappingAdded": 7,
+            "CNightObservation.MappingRemoved": 6
+          },
+          "servesOnItsOwn": "decoding, events and outcomes of runtime 1.0 blocks with many transactions; LG-8 scenario block 1,788,980 for decoding",
+          "needs": "the ledger state at 1,780,000 for state roots (A99: the state after replaying mainnet-1774000-1780000 from a backup at 1,774,000)"
+        }
+      }
+    },
+    {
+      "file": "preprod-0-10000.tape.jsonl",
+      "originalFile": "preprod-0-10000.tape.jsonl",
+      "network": "preprod",
+      "start": 0,
+      "end": 10000,
+      "endpointsInclusive": true,
+      "bytes": 45658750,
+      "sha256": "f470b4d4dbe5abe7fc9a79880260409fe9b83287229d7da854f671e3daa8ba90",
+      "records": 60051,
+      "source": {
+        "endpoint": "wss://rpc.preprod.midnight.network",
+        "nodeVersion": "1.0.400-c338b9ac",
+        "recorded": "2026-10-26"
+      },
+      "recorder": {
+        "packageVersion": "0.9.5",
+        "developmentSnapshot": true,
+        "originalLaneCommitAbbreviation": "b79ab0d",
+        "integratedSourceCommit": "0e81e0f0ae96fed19268ba8ca497fe26ee554b53",
+        "provenanceNote": "Historical task records identify the original lane commit by abbreviation. Full integrated commit identifies the retained source after integration, not the exact original recording checkout."
+      },
+      "historicalManifest": {
+        "name": "preprod-0-10000",
+        "file": "preprod-0-10000.tape.jsonl",
+        "network": "preprod",
+        "from": 0,
+        "to": 10000,
+        "sha256": "f470b4d4dbe5abe7fc9a79880260409fe9b83287229d7da854f671e3daa8ba90",
+        "bytes": 45658750,
+        "records": 60051,
+        "source": {
+          "endpoint": "wss://rpc.preprod.midnight.network",
+          "nodeVersion": "1.0.400-c338b9ac",
+          "recorded": "2026-10-26"
+        },
+        "bounds": "Preprod from genesis: block 0 (genesis_state, and cNight registrations under Mappings) and the first 10,000 blocks, built by runtime 22_000 (0.22, ledger v8) throughout. From genesis, so it serves state roots on its own; only 3 blocks carry Midnight transactions (1,207, 1,458, 1,716): preprod's first blocks are nearly empty.",
+        "notes": {
+          "recordedWith": "npx tsx tools/tape/main.ts range --node wss://rpc.preprod.midnight.network --from 0 --to 10000 --live-seconds 60 (concurrency 8, 500 heights a connection)",
+          "requests": 60028,
+          "seconds": 1912.6,
+          "requestsPerSecond": 31.4,
+          "heightsPerSecond": 5.2,
+          "chunksRecordedAgain": 0,
+          "liveWindowSeconds": 60,
+          "runtimes": [
+            {
+              "height": 0,
+              "specVersion": 22000
+            }
+          ],
+          "metadataHeights": [
+            0
+          ],
+          "boundaries": [],
+          "blocksWithMidnightTransactions": 3,
+          "eventKinds": {
+            "Midnight.TxApplied": 3,
+            "MidnightSystem.SystemTransactionApplied": 1,
+            "CNightObservation.SystemTransactionApplied": 1,
+            "CNightObservation.Registration": 5,
+            "CNightObservation.Deregistration": 2,
+            "CNightObservation.MappingAdded": 5,
+            "CNightObservation.MappingRemoved": 2
+          },
+          "servesOnItsOwn": "every criterion that replays from genesis, runtime 0.22 (LG-8 rule of 0.22), few transactions",
+          "needs": "nothing"
+        }
+      }
+    },
+    {
+      "file": "preview-0-10000.tape.jsonl",
+      "originalFile": "preview-0-10000.tape.jsonl",
+      "network": "preview",
+      "start": 0,
+      "end": 10000,
+      "endpointsInclusive": true,
+      "bytes": 61696218,
+      "sha256": "1a56651a4e686c8fca3da1dc2801577c4f535e3283ac98052b25be5780e34872",
+      "records": 60037,
+      "source": {
+        "endpoint": "wss://rpc.preview.midnight.network",
+        "nodeVersion": "1.0.400-87c0fbdb",
+        "recorded": "2026-10-26"
+      },
+      "recorder": {
+        "packageVersion": "0.9.5",
+        "developmentSnapshot": true,
+        "originalLaneCommitAbbreviation": "b79ab0d",
+        "integratedSourceCommit": "0e81e0f0ae96fed19268ba8ca497fe26ee554b53",
+        "provenanceNote": "Historical task records identify the original lane commit by abbreviation. Full integrated commit identifies the retained source after integration, not the exact original recording checkout."
+      },
+      "historicalManifest": {
+        "name": "preview-0-10000",
+        "file": "preview-0-10000.tape.jsonl",
+        "network": "preview",
+        "from": 0,
+        "to": 10000,
+        "sha256": "1a56651a4e686c8fca3da1dc2801577c4f535e3283ac98052b25be5780e34872",
+        "bytes": 61696218,
+        "records": 60037,
+        "source": {
+          "endpoint": "wss://rpc.preview.midnight.network",
+          "nodeVersion": "1.0.400-87c0fbdb",
+          "recorded": "2026-10-26"
+        },
+        "bounds": "Preview from genesis: block 0 (its genesis_state and cNight registrations, IN-7) and the first 10,000 blocks, all built by runtime 1_000_000 (ledger v8). A replay from genesis has every state it needs, so the tape serves A99 (state roots against the node) on its own, as well as decoding, events and outcomes; 209 of its blocks carry Midnight transactions (deploys, calls, maintenance, unshielded transfers) and 44 the node's own system transactions.",
+        "notes": {
+          "recordedWith": "npx tsx tools/tape/main.ts range --node wss://rpc.preview.midnight.network --from 0 --to 10000 --live-seconds 60 (concurrency 8, 500 heights a connection)",
+          "requests": 60014,
+          "seconds": 1882.0,
+          "requestsPerSecond": 31.9,
+          "heightsPerSecond": 5.3,
+          "chunksRecordedAgain": 0,
+          "liveWindowSeconds": 60,
+          "runtimes": [
+            {
+              "height": 0,
+              "specVersion": 1000000
+            }
+          ],
+          "metadataHeights": [
+            0
+          ],
+          "boundaries": [],
+          "blocksWithMidnightTransactions": 209,
+          "eventKinds": {
+            "Midnight.TxApplied": 221,
+            "Midnight.ContractDeploy": 43,
+            "Midnight.ContractCall": 70,
+            "Midnight.ContractMaintain": 53,
+            "Midnight.UnshieldedTokens": 59,
+            "MidnightSystem.SystemTransactionApplied": 44,
+            "CNightObservation.SystemTransactionApplied": 44,
+            "CNightObservation.Registration": 2594,
+            "CNightObservation.Deregistration": 1014,
+            "CNightObservation.MappingAdded": 3021,
+            "CNightObservation.MappingRemoved": 1011,
+            "System.ExtrinsicSuccess": 30256
+          },
+          "servesOnItsOwn": "every criterion that replays from genesis: decoding, events, outcomes, and state roots (A99 preview from genesis, A91 events)",
+          "needs": "nothing"
+        }
+      }
+    },
+    {
+      "file": "preview-1073620-1075620.tape.jsonl",
+      "originalFile": "preview-1073620-1075620.tape.jsonl",
+      "network": "preview",
+      "start": 1073620,
+      "end": 1075620,
+      "endpointsInclusive": true,
+      "bytes": 10329363,
+      "sha256": "07995d30899abcd5335f64d6f446bf1c544dccf68c47bc63578838e274cbc86f",
+      "records": 12034,
+      "source": {
+        "endpoint": "wss://rpc.preview.midnight.network",
+        "nodeVersion": "1.0.400-87c0fbdb",
+        "recorded": "2026-10-26"
+      },
+      "recorder": {
+        "packageVersion": "0.9.5",
+        "developmentSnapshot": true,
+        "originalLaneCommitAbbreviation": "b79ab0d",
+        "integratedSourceCommit": "0e81e0f0ae96fed19268ba8ca497fe26ee554b53",
+        "provenanceNote": "Historical task records identify the original lane commit by abbreviation. Full integrated commit identifies the retained source after integration, not the exact original recording checkout."
+      },
+      "historicalManifest": {
+        "name": "preview-1073620-1075620",
+        "file": "preview-1073620-1075620.tape.jsonl",
+        "network": "preview",
+        "from": 1073620,
+        "to": 1075620,
+        "sha256": "07995d30899abcd5335f64d6f446bf1c544dccf68c47bc63578838e274cbc86f",
+        "bytes": 10329363,
+        "records": 12034,
+        "source": {
+          "endpoint": "wss://rpc.preview.midnight.network",
+          "nodeVersion": "1.0.400-87c0fbdb",
+          "recorded": "2026-10-26"
+        },
+        "bounds": "1,000 blocks each side of preview's runtime 1.0.300 upgrade (U 1,074,620 enacts it, F 1,074,621 is the first block of spec_version 1_000_300; found by bisecting state_getRuntimeVersion): LG-8's replay rule changes there, and the range holds 8 blocks with Midnight transactions before U and 12 after F, 3 of them partial successes. It starts mid-chain: decoding, events and outcomes need nothing else, but a replay of its state roots (A99's preview half) needs the ledger state at 1,073,620, from an UmbraDB backup of a sync from genesis.",
+        "notes": {
+          "recordedWith": "npx tsx tools/tape/main.ts range --node wss://rpc.preview.midnight.network --from 1073620 --to 1075620 --live-seconds 60 (concurrency 8, 500 heights a connection)",
+          "requests": 12012,
+          "seconds": 426.1,
+          "requestsPerSecond": 28.2,
+          "heightsPerSecond": 4.7,
+          "chunksRecordedAgain": 0,
+          "liveWindowSeconds": 60,
+          "runtimes": [
+            {
+              "height": 1073620,
+              "specVersion": 1000000
+            },
+            {
+              "height": 1074620,
+              "specVersion": 1000300
+            }
+          ],
+          "metadataHeights": [
+            1073620,
+            1074620
+          ],
+          "boundaries": [
+            {
+              "u": {
+                "height": 1074620,
+                "hash": "0xc8240ede42ea576b668cb7f17628768c61d80059b1abbfa26916e29507de019e",
+                "specVersion": 1000000
+              },
+              "f": {
+                "height": 1074621,
+                "hash": "0xd4f9ab73e87b22fe2b4fd930368fe4bc1da3446c93a2cbb04f5b749f3c067d83",
+                "specVersion": 1000300
+              }
+            }
+          ],
+          "blocksWithMidnightTransactions": 22,
+          "eventKinds": {
+            "Midnight.TxApplied": 20,
+            "Midnight.TxPartialSuccess": 3,
+            "Midnight.ContractCall": 10,
+            "Midnight.ContractDeploy": 1,
+            "Midnight.UnshieldedTokens": 12,
+            "System.CodeUpdated": 1,
+            "System.UpgradeAuthorized": 1,
+            "FederatedAuthority.MotionDispatched": 1
+          },
+          "servesOnItsOwn": "decoding, events and outcomes across the 1.0.300 upgrade (U decoded with the old metadata, F with the new; LG-4, A89)",
+          "needs": "the ledger state at 1,073,620 for state roots (A99)"
+        }
+      }
+    },
+    {
+      "file": "stagenet-0-10000.tape.jsonl",
+      "originalFile": "stagenet-0-10000.tape.jsonl",
+      "network": "stagenet",
+      "start": 0,
+      "end": 10000,
+      "endpointsInclusive": true,
+      "bytes": 50052119,
+      "sha256": "a21d1ca8e0665c53e1545c3ce3683ea471cbdfb81f75821e66df6ff5a24d80ee",
+      "records": 60036,
+      "source": {
+        "endpoint": "wss://rpc.stagenet.shielded.tools",
+        "nodeVersion": "2.0.0-d9729c13",
+        "recorded": "2026-10-26"
+      },
+      "recorder": {
+        "packageVersion": "0.9.5",
+        "developmentSnapshot": true,
+        "originalLaneCommitAbbreviation": "eeaf83f",
+        "integratedSourceCommit": "86f88fb4cae10e0a96cbba61289a9d51553a1072",
+        "provenanceNote": "Historical task records identify the original lane commit by abbreviation. Full integrated commit identifies the retained source after integration, not the exact original recording checkout."
+      },
+      "historicalManifest": {
+        "name": "stagenet-0-10000",
+        "file": "stagenet-0-10000.tape.jsonl",
+        "network": "stagenet",
+        "from": 0,
+        "to": 10000,
+        "sha256": "a21d1ca8e0665c53e1545c3ce3683ea471cbdfb81f75821e66df6ff5a24d80ee",
+        "bytes": 50052119,
+        "records": 60036,
+        "source": {
+          "endpoint": "wss://rpc.stagenet.shielded.tools",
+          "nodeVersion": "2.0.0-d9729c13",
+          "recorded": "2026-10-26"
+        },
+        "bounds": "Stagenet from genesis, recorded from a third-party node (stagenet is a temporary network with no midnight.network node): block 0 and the first 10,000 blocks, all of runtime 2_000_000 (ledger v9 since genesis, so no v8 to v9 upgrade); 14 blocks carry Midnight transactions (unshielded transfers, heights 4,950 to 5,117) and 50 the node's own system transactions. From genesis, so it serves state roots on its own (A99-style, ledger v9); 853 of its midnight_ledgerStateRoot answers are a 971-byte root node rather than a 33-byte key.",
+        "notes": {
+          "recordedWith": "npx tsx tools/tape/main.ts range --node wss://rpc.stagenet.shielded.tools --from 0 --to 10000 --live-seconds 60 (concurrency 8, 500 heights a connection)",
+          "requests": 60014,
+          "seconds": 1896.4,
+          "requestsPerSecond": 31.6,
+          "heightsPerSecond": 5.3,
+          "chunksRecordedAgain": 0,
+          "liveWindowSeconds": 60,
+          "runtimes": [
+            {
+              "height": 0,
+              "specVersion": 2000000
+            }
+          ],
+          "metadataHeights": [
+            0
+          ],
+          "boundaries": [],
+          "genesis": {
+            "hash": "0x2f76825abc239fecf6107c9df99016de57037b451ae57a4394b76c8cf53a9491",
+            "specVersion": 2000000
+          },
+          "blocksWithMidnightTransactions": 14,
+          "eventKinds": {
+            "Midnight.TxApplied": 14,
+            "Midnight.UnshieldedTokens": 14,
+            "MidnightSystem.SystemTransactionApplied": 50,
+            "CNightObservation.SystemTransactionApplied": 50,
+            "CNightObservation.Registration": 3014,
+            "CNightObservation.Deregistration": 1181,
+            "CNightObservation.MappingAdded": 3470,
+            "CNightObservation.MappingRemoved": 1153
+          },
+          "servesOnItsOwn": "every criterion that replays from genesis on ledger v9 (no contract actions, no upgrade)",
+          "needs": "nothing; it cannot show the v8 to v9 upgrade (A96, A100, LG-9), which only the devnet tape holds"
+        }
+      }
+    },
+    {
+      "file": "devnet-0-235-v8-v9.tape.jsonl",
+      "originalFile": "devnet-v8-v9-0-235.tape.jsonl",
+      "network": "devnet",
+      "start": 0,
+      "end": 235,
+      "endpointsInclusive": true,
+      "bytes": 4237638,
+      "sha256": "02c20204dcb5557b88c6e8d372ba0cdeaf9f949f5e8a5a5eadc7908cbff9f9c5",
+      "records": 1531,
+      "source": {
+        "endpoint": "local devnet (not a public endpoint)",
+        "nodeVersion": "2.1.0-1b2b31c7",
+        "recorded": "2026-10-26"
+      },
+      "recorder": {
+        "packageVersion": "0.9.5",
+        "developmentSnapshot": true,
+        "originalLaneCommitAbbreviation": "eeaf83f",
+        "integratedSourceCommit": "86f88fb4cae10e0a96cbba61289a9d51553a1072",
+        "provenanceNote": "Historical task records identify the original lane commit by abbreviation. Full integrated commit identifies the retained source after integration, not the exact original recording checkout."
+      },
+      "historicalManifest": {
+        "name": "devnet-v8-v9-0-235",
+        "file": "devnet-v8-v9-0-235.tape.jsonl",
+        "network": "custom",
+        "from": 0,
+        "to": 235,
+        "sha256": "02c20204dcb5557b88c6e8d372ba0cdeaf9f949f5e8a5a5eadc7908cbff9f9c5",
+        "bytes": 4237638,
+        "records": 1531,
+        "source": {
+          "endpoint": "local devnet (not a public endpoint)",
+          "nodeVersion": "2.1.0-1b2b31c7",
+          "recorded": "2026-10-26"
+        },
+        "bounds": "Our undeployed devnet (tools/devnet/devnet.sh), from genesis to height 235: the 2.1.0-rc.4 node on midnight-node 1.0.0's dev chain-spec, runtime 1_000_000 (ledger v8) to the governance upgrade enacted at U 102 (0x381f…99a8, MNSV 1_000_000), F 103 (0xba69…824d, MNSV 2_001_000, ledger v9) with the state conversion and the node's DUST reapply system transactions at F; our own traffic on each side. It holds every outcome kind the core stores: TxApplied (17), TxPartialSuccess (31 v8, 136 v9), ExtrinsicFailed (34 v8, 139 v9: governance proposals by non-members), SystemTransactionApplied (61, 103 three times, 166, 193, 230), and contract deploys, calls and maintenance on both ledgers. From genesis, so it serves state roots and the conversion (A100, LG-9) on its own.",
+        "notes": {
+          "recordedWith": "tools/devnet/devnet.sh (runs tools/tape/main.ts range --from 0 --to 235 --live-seconds 60)",
+          "images": {
+            "chainSpec": "midnightntwrk/midnight-node@sha256:ede01da35e982b6a4b85461ad8492ae2753ef14246fba33c8039b782aa8e39fb (1.0.0)",
+            "node": "midnightntwrk/midnight-node@sha256:9040c346c27f569b72dfbbad9420cf38fc7cc6a13b38adf814a925bbe9311678 (2.1.0-rc.4)",
+            "toolkitV8": "midnightntwrk/midnight-node-toolkit@sha256:41f55d35c9acc4f527f4afd168ad4d071f745dca65b60cdfdc9d886645e78442 (1.0.0)",
+            "toolkitV9": "midnightntwrk/midnight-node-toolkit@sha256:b17370121f4e438eaf7d0b466cbe5f7df391b8b39418d5d5892b6a6a0b4737b6 (2.1.0-rc.4)"
+          },
+          "chainSpecSha256": "67facd3abc5844fbbd76173e66ada195af444a270401d70320ce50346badb7cb (bootNodes emptied)",
+          "runtimeWasmSha256": "f3447cdf9027b73fe3ccb119da7b01b6f0d600bef9f09f7458c061ecaf8498d4 (artifacts-arm64/midnight_node_runtime.compact.compressed.wasm)",
+          "genesis": {
+            "hash": "0xe624f91737add2cf1a6658b3cf3a5524d633faea8c943702b435820316d9e21e",
+            "specVersion": 1000000
+          },
+          "boundaries": [
+            {
+              "u": {
+                "height": 102,
+                "hash": "0x381f2c5b126467ee81f527b3c0c0d62d679a18fa6cd61933e86e1e2b543599a8",
+                "specVersion": 1000000
+              },
+              "f": {
+                "height": 103,
+                "hash": "0xba69a4457e19d335a16d60f9399201a3b46f92c536cc5d33a3d051d9f620824d",
+                "specVersion": 2001000
+              }
+            }
+          ],
+          "boundaryRecord": "test/tape/real/devnet-v8-v9-0-235.boundaries.json",
+          "runtimes": [
+            {
+              "height": 0,
+              "specVersion": 1000000
+            },
+            {
+              "height": 102,
+              "specVersion": 2001000
+            }
+          ],
+          "metadataHeights": [
+            0,
+            102
+          ],
+          "requests": 1509,
+          "liveWindowSeconds": 60,
+          "traffic": {
+            "v8": {
+              "transfer": 7,
+              "deploy": 11,
+              "call": 16,
+              "maintenance": 23,
+              "partialSuccess": [
+                30,
+                31
+              ],
+              "extrinsicFailed": 34,
+              "governanceSystemTransaction": 61,
+              "blockLimitTransfers": 69
+            },
+            "v9": {
+              "dustRegistrations": [
+                107,
+                110,
+                113
+              ],
+              "transfer": 117,
+              "deploy": 121,
+              "call": 125,
+              "maintenance": 131,
+              "partialSuccess": 136,
+              "extrinsicFailed": 139,
+              "governanceSystemTransactions": [
+                166,
+                193,
+                230
+              ],
+              "blockLimitTransfers": [
+                202,
+                203
+              ]
+            }
+          },
+          "eventKinds": {
+            "Midnight.TxApplied": 17,
+            "Midnight.TxPartialSuccess": 2,
+            "Midnight.ContractDeploy": 2,
+            "Midnight.ContractCall": 2,
+            "Midnight.ContractMaintain": 2,
+            "Midnight.UnshieldedTokens": 11,
+            "MidnightSystem.SystemTransactionApplied": 7,
+            "System.ExtrinsicFailed": 2,
+            "System.CodeUpdated": 1,
+            "System.UpgradeAuthorized": 1,
+            "MultiBlockMigrations.UpgradeStarted": 1,
+            "MultiBlockMigrations.UpgradeCompleted": 1,
+            "CNightObservation.DustReapplyStarted": 1,
+            "CNightObservation.DustReapplyCompleted": 1
+          },
+          "notProduced": {
+            "ExtrinsicFailed of a Midnight transaction": "a double spend is dropped by the pool (validation dry-runs the guaranteed segment against the state), and two transfers over a lowered block_usage limit were applied in consecutive blocks (202, 203), not failed; a contract whose guaranteed transcript two calls make conflict at apply would produce it",
+            "Midnight.ClaimRewards": "no claimable rewards on the dev chain: claim-rewards is refused by the pool",
+            "Midnight.PayoutMinted": "declared by pallet-midnight at node-2.1.0-rc.4 but deposited nowhere in its code",
+            "CNightObservation.SystemTransactionApplied": "the dev chain's mock bridge repeats one registration; no cNight UTXO observation creates a system transaction"
+          },
+          "a71ManualCheck": "Separate local devnet record/replay check: fc1895ac1a3714c10c9196d724ce6a6e754d757abd0157fabb33ef28773b5d29; identical: 1 connection, 12 frames sent and 16 received, byte for byte.",
+          "servesOnItsOwn": "every criterion that replays from genesis, the v8 to v9 upgrade and conversion (A96, A100, LG-9, 0.2 second item), A91 events at U, A93 outcomes",
+          "needs": "nothing"
+        }
+      }
+    }
+  ]
+}

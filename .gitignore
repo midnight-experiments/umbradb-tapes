@@ -1,0 +1,6 @@
+*.tape.jsonl
+*.tape.jsonl.*
+/downloads/
+/distribution/
+/verification/
+*.log
