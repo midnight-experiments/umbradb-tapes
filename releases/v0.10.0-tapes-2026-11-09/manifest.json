@@ -1,0 +1,249 @@
+{
+  "schemaVersion": 1,
+  "format": "umbradb-tape-jsonl",
+  "collectionVersion": "0.10.0-tapes-2026-11-09",
+  "releaseTag": "v0.10.0-tapes-2026-11-09",
+  "sourceRepository": "https://github.com/midnightntwrk/umbradb",
+  "collectionSourceCommit": "a3c29281957a1bbb5a8c5cf3895b64920ba02905",
+  "collectionSourcePackageVersion": "0.10.0",
+  "provenance": "These tapes were recorded on 2026-11-09 from the official Midnight nodes (2.1.101-913ec011) with UmbraDB's tools/tape range recorder at the collection source commit, for the runtime 2.1 delayed upgrade to 2,001,100 (ledger v9) on mainnet, preprod and preview; they are used by midnightntwrk/umbradb's test/ledger/delayed-upgrade.test.ts. They were recorded with --live-seconds 0 (no live window), unlike the 0.10.0-rc.1 collection's 60 seconds. Filenames may change; tape bytes and SHA-256 identities are preserved.",
+  "tapes": [
+    {
+      "file": "mainnet-3346039-3346239.tape.jsonl",
+      "originalFile": "mainnet-3346039-3346239.tape.jsonl",
+      "network": "mainnet",
+      "start": 3346039,
+      "end": 3346239,
+      "endpointsInclusive": true,
+      "bytes": 14274990,
+      "sha256": "2209a7068c4c39de930003f4f6f74d7cfd354eaa2c50179204846aa707d7a3a2",
+      "records": 1214,
+      "source": {
+        "endpoint": "wss://rpc.mainnet.midnight.network",
+        "nodeVersion": "2.1.101-913ec011",
+        "recorded": "2026-11-09"
+      },
+      "recorder": {
+        "packageVersion": "0.10.0",
+        "developmentSnapshot": true,
+        "integratedSourceCommit": "a3c29281957a1bbb5a8c5cf3895b64920ba02905",
+        "provenanceNote": "Recorded with tools/tape/main.ts range from working branches of midnightntwrk/umbradb whose tools/tape was identical to main at the integrated source commit (checked by diff); their own commits were later re-signed or merged, so the integrated commit identifies the recorder's source."
+      },
+      "historicalManifest": {
+        "name": "mainnet-3346039-3346239",
+        "file": "mainnet-3346039-3346239.tape.jsonl",
+        "network": "mainnet",
+        "from": 3346039,
+        "to": 3346239,
+        "sha256": "2209a7068c4c39de930003f4f6f74d7cfd354eaa2c50179204846aa707d7a3a2",
+        "bytes": 14274990,
+        "records": 1214,
+        "source": {
+          "endpoint": "wss://rpc.mainnet.midnight.network",
+          "nodeVersion": "2.1.101-913ec011",
+          "recorded": "2026-11-09"
+        },
+        "bounds": "Mainnet's delayed runtime upgrade to 2,001,100 (ledger v9, runtime 2.1's system_version 3), 100 blocks either side: block 3346138 (0x0dd469de…) carries the staged upgrade and still holds runtime 1,000,300 in its state; block 3346139 (0x952f999b…) is the first the new runtime built, its MNSV digest and own state 2,001,100, its parent's state 1,000,300. Replayed across it a selection that decodes a block with its parent's runtime only halts there with metadata-mismatch.",
+        "notes": {
+          "recordedWith": "npx tsx tools/tape/main.ts range --node wss://rpc.mainnet.midnight.network --from 3346039 --to 3346239 --out mainnet-3346039-3346239.tape.jsonl --concurrency 4 --live-seconds 0",
+          "requests": 1212,
+          "seconds": 44.2,
+          "liveWindowSeconds": 0,
+          "runtimes": [
+            {
+              "height": 3346039,
+              "specVersion": 1000300
+            },
+            {
+              "height": 3346139,
+              "specVersion": 2001100
+            }
+          ],
+          "metadataHeights": [
+            3346039,
+            3346139
+          ],
+          "boundaries": [],
+          "genesis": {
+            "hash": "0x1941ca8e2bb88146c14dea084d3be7eb6e96ca7135429c543848b628124f2854",
+            "specVersion": 22000
+          },
+          "servesOnItsOwn": "the delayed upgrade's first block, replayed with core-contract-logs-fast's core from a block before it: test/ledger/delayed-upgrade.test.ts",
+          "needs": "the network's genesis hash and header put before its records (startup asks for them; test/ledger/fixtures/networks/)",
+          "liveWindowNote": "Recorded with --live-seconds 0: the tape ends with the two subscriptions, the finalized head and two notifications, not a 60-second window.",
+          "blocksWithMidnightTransactions": 99,
+          "eventKinds": {
+            "CNightObservation.DustReapplyCompleted": 1,
+            "CNightObservation.DustReapplyStarted": 1,
+            "CNightObservation.ObservationsSkippedForMigration": 49,
+            "CNightObservation.SystemTransactionApplied": 1,
+            "Midnight.ContractCall": 690,
+            "Midnight.TxApplied": 690,
+            "MidnightSystem.SystemTransactionApplied": 274
+          },
+          "eventKindsNote": "Counted from 3,346,040 to 3,346,239: a mid-chain replay anchors on the tape's first block."
+        }
+      }
+    },
+    {
+      "file": "preprod-3348334-3348534.tape.jsonl",
+      "originalFile": "preprod-3348334-3348534.tape.jsonl",
+      "network": "preprod",
+      "start": 3348334,
+      "end": 3348534,
+      "endpointsInclusive": true,
+      "bytes": 2652543,
+      "sha256": "c734fc0538a7ec4fada817b0f0cf520dbff5307ae09f058426aeb5fc2e45b267",
+      "records": 1214,
+      "source": {
+        "endpoint": "wss://rpc.preprod.midnight.network",
+        "nodeVersion": "2.1.101-913ec011",
+        "recorded": "2026-11-09"
+      },
+      "recorder": {
+        "packageVersion": "0.10.0",
+        "developmentSnapshot": true,
+        "integratedSourceCommit": "a3c29281957a1bbb5a8c5cf3895b64920ba02905",
+        "provenanceNote": "Recorded with tools/tape/main.ts range from working branches of midnightntwrk/umbradb whose tools/tape was identical to main at the integrated source commit (checked by diff); their own commits were later re-signed or merged, so the integrated commit identifies the recorder's source."
+      },
+      "historicalManifest": {
+        "name": "preprod-3348334-3348534",
+        "file": "preprod-3348334-3348534.tape.jsonl",
+        "network": "preprod",
+        "from": 3348334,
+        "to": 3348534,
+        "sha256": "c734fc0538a7ec4fada817b0f0cf520dbff5307ae09f058426aeb5fc2e45b267",
+        "bytes": 2652543,
+        "records": 1214,
+        "source": {
+          "endpoint": "wss://rpc.preprod.midnight.network",
+          "nodeVersion": "2.1.101-913ec011",
+          "recorded": "2026-11-09"
+        },
+        "bounds": "Preprod's delayed runtime upgrade to 2,001,100 (ledger v9, runtime 2.1's system_version 3), 100 blocks either side: block 3348433 (0x39c4a2f0…) carries the staged upgrade and still holds runtime 1,000,300 in its state; block 3348434 (0x125e3ce0…) is the first the new runtime built, its MNSV digest and own state 2,001,100, its parent's state 1,000,300. Replayed across it a selection that decodes a block with its parent's runtime only halts there with metadata-mismatch.",
+        "notes": {
+          "recordedWith": "npx tsx tools/tape/main.ts range --node wss://rpc.preprod.midnight.network --from 3348334 --to 3348534 --out preprod-3348334-3348534.tape.jsonl --concurrency 4 --live-seconds 0",
+          "requests": 1212,
+          "seconds": 41.6,
+          "liveWindowSeconds": 0,
+          "runtimes": [
+            {
+              "height": 3348334,
+              "specVersion": 1000300
+            },
+            {
+              "height": 3348434,
+              "specVersion": 2001100
+            }
+          ],
+          "metadataHeights": [
+            3348334,
+            3348434
+          ],
+          "boundaries": [],
+          "genesis": {
+            "hash": "0xdf831b09a8baa92badf47762ce5ac439b7e47e3ed3d39600cfdd44fad552361b",
+            "specVersion": 22000
+          },
+          "servesOnItsOwn": "the delayed upgrade's first block, replayed with core-contract-logs-fast's core from a block before it: test/ledger/delayed-upgrade.test.ts",
+          "needs": "the network's genesis hash and header put before its records (startup asks for them; test/ledger/fixtures/networks/)",
+          "liveWindowNote": "Recorded with --live-seconds 0: the tape ends with the two subscriptions, the finalized head and two notifications, not a 60-second window.",
+          "blocksWithMidnightTransactions": 9,
+          "eventKinds": {
+            "CNightObservation.DustReapplyCompleted": 1,
+            "CNightObservation.DustReapplyStarted": 1,
+            "CNightObservation.ObservationsSkippedForMigration": 1,
+            "Midnight.ContractCall": 9,
+            "Midnight.TxApplied": 10,
+            "Midnight.UnshieldedTokens": 1,
+            "MidnightSystem.SystemTransactionApplied": 4
+          },
+          "eventKindsNote": "Counted from 3,348,335 to 3,348,534: a mid-chain replay anchors on the tape's first block."
+        }
+      }
+    },
+    {
+      "file": "preview-0-2000-v8-v9.tape.jsonl",
+      "originalFile": "preview-v9-0-2000.tape.jsonl",
+      "network": "preview",
+      "start": 0,
+      "end": 2000,
+      "endpointsInclusive": true,
+      "bytes": 32357421,
+      "sha256": "05129f47dcac337e4a0417299dc23b55e0b5a87cc0edeb14f25fc74941951678",
+      "records": 12018,
+      "source": {
+        "endpoint": "wss://rpc.preview.midnight.network",
+        "nodeVersion": "2.1.101-913ec011",
+        "recorded": "2026-11-09"
+      },
+      "recorder": {
+        "packageVersion": "0.10.0",
+        "developmentSnapshot": true,
+        "integratedSourceCommit": "a3c29281957a1bbb5a8c5cf3895b64920ba02905",
+        "provenanceNote": "Recorded with tools/tape/main.ts range from working branches of midnightntwrk/umbradb whose tools/tape was identical to main at the integrated source commit (checked by diff); their own commits were later re-signed or merged, so the integrated commit identifies the recorder's source."
+      },
+      "historicalManifest": {
+        "name": "preview-0-2000-v8-v9",
+        "file": "preview-0-2000-v8-v9.tape.jsonl",
+        "network": "preview",
+        "from": 0,
+        "to": 2000,
+        "sha256": "05129f47dcac337e4a0417299dc23b55e0b5a87cc0edeb14f25fc74941951678",
+        "bytes": 32357421,
+        "records": 12018,
+        "source": {
+          "endpoint": "wss://rpc.preview.midnight.network",
+          "nodeVersion": "2.1.101-913ec011",
+          "recorded": "2026-11-09"
+        },
+        "bounds": "Preview from genesis after its restart from the same genesis hash, over both of its runtime upgrades: 1,000,000 to 1,000,300 at 556 and 1,000,300 to 2,001,100 (ledger v9) at 1,572. Its 21 regular transactions are all at genesis: no contract call before the v9 runtime. It is the first official network's delayed runtime upgrade (runtime 2.1's system_version 3) on a tape that starts at genesis. Recorded as preview-v9-0-2000.tape.jsonl and renamed to the tapes collection's naming ({network}-{start}-{end}[-{notes}]); the bytes and SHA-256 are unchanged.",
+        "notes": {
+          "recordedWith": "npx tsx tools/tape/main.ts range --node wss://rpc.preview.midnight.network --from 0 --to 2000 --out preview-0-2000-v8-v9.tape.jsonl --concurrency 4 --live-seconds 0",
+          "requests": 12016,
+          "seconds": 411.4,
+          "liveWindowSeconds": 0,
+          "runtimes": [
+            {
+              "height": 0,
+              "specVersion": 1000000
+            },
+            {
+              "height": 556,
+              "specVersion": 1000300
+            },
+            {
+              "height": 1572,
+              "specVersion": 2001100
+            }
+          ],
+          "metadataHeights": [
+            0,
+            556,
+            1572
+          ],
+          "boundaries": [],
+          "genesis": {
+            "hash": "0x3c096de209e06a1a8c52be7bda109ee8c891a42288c0a9db5495f9616dd13796",
+            "specVersion": 1000000
+          },
+          "servesOnItsOwn": "preview's new chain from genesis across an upgrade of the earlier form (556) and a delayed one (1,572): test/ledger/delayed-upgrade.test.ts",
+          "needs": "nothing; it starts at genesis",
+          "liveWindowNote": "Recorded with --live-seconds 0: the tape ends with the two subscriptions, the finalized head and two notifications, not a 60-second window.",
+          "blocksWithMidnightTransactions": 0,
+          "eventKinds": {
+            "CNightObservation.Deregistration": 1242,
+            "CNightObservation.DustReapplyCompleted": 1,
+            "CNightObservation.DustReapplyStarted": 1,
+            "CNightObservation.MappingAdded": 3647,
+            "CNightObservation.MappingRemoved": 1203,
+            "CNightObservation.ObservationsSkippedForMigration": 17,
+            "CNightObservation.Registration": 3180,
+            "CNightObservation.SystemTransactionApplied": 42,
+            "MidnightSystem.SystemTransactionApplied": 111
+          }
+        }
+      }
+    }
+  ]
+}

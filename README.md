@@ -24,9 +24,30 @@ All block endpoints are **inclusive**. A range starting at zero includes genesis
 
 Total: **295,505,367 bytes**. The two historical Mainnet ranges intentionally share block 1,780,000. The devnet asset was originally named `devnet-v8-v9-0-235.tape.jsonl`; only its distribution filename changed, and its bytes and SHA-256 are unchanged.
 
+## Collection 0.10.0-tapes-2026-11-09: the runtime 2.1 delayed upgrades
+
+Three tapes recorded on **2026-11-09** from the official Midnight nodes (node `2.1.101-913ec011`), with UmbraDB's range
+recorder at [`a3c29281957a1bbb5a8c5cf3895b64920ba02905`](https://github.com/midnightntwrk/umbradb/tree/a3c29281957a1bbb5a8c5cf3895b64920ba02905).
+They cover the upgrade of mainnet, preprod and preview to runtime 2,001,100 (ledger v9), a **delayed** runtime upgrade
+(runtime 2.1's `system_version` 3: the block that applies the upgrade only stages the code, and the next block is the
+first the new runtime builds). They were recorded **without a live window** (`--live-seconds 0`): each ends with the two
+subscriptions, the finalized head and two notifications. Their recording parameters, node versions and event kinds are
+in the [versioned manifest](releases/v0.10.0-tapes-2026-11-09/manifest.json).
+
+| Asset | Blocks | Bytes | Purpose |
+|---|---:|---:|---|
+| `mainnet-3346039-3346239.tape.jsonl` | 3,346,039–3,346,239 | 14,274,990 | Mainnet delayed upgrade to 2,001,100 at 3,346,139 |
+| `preprod-3348334-3348534.tape.jsonl` | 3,348,334–3,348,534 | 2,652,543 | Preprod delayed upgrade to 2,001,100 at 3,348,434 |
+| `preview-0-2000-v8-v9.tape.jsonl` | 0–2,000 | 32,357,421 | Preview from genesis after its restart: 1,000,300 at 556, delayed upgrade to 2,001,100 at 1,572 |
+
+Total: **49,284,954 bytes**. Preview was restarted from the same genesis hash: `preview-0-2000-v8-v9` is the new chain,
+while `preview-0-10000` and `preview-1073620-1075620` above are the old one. The preview asset was recorded as
+`preview-v9-0-2000.tape.jsonl`; only its filename changed. The two mid-chain tapes need their network's genesis hash and
+header before their records when replayed from a cold start (startup asks for them).
+
 ## Download and verify
 
-Download the desired `.tape.jsonl` assets, `manifest.json`, and `SHA256SUMS` from the [0.10.0-rc.1 release](https://github.com/midnight-experiments/umbradb-tapes/releases/tag/v0.10.0-rc.1). The [collection tag](https://github.com/midnight-experiments/umbradb-tapes/tree/v0.10.0-rc.1) pins the original seven-tape inventory. The same manifest and checksums are committed under [`releases/v0.10.0-rc.1/`](releases/v0.10.0-rc.1/).
+Download the desired `.tape.jsonl` assets, `manifest.json`, and `SHA256SUMS` from the [0.10.0-rc.1 release](https://github.com/midnight-experiments/umbradb-tapes/releases/tag/v0.10.0-rc.1), or from the [0.10.0-tapes-2026-11-09 release](https://github.com/midnight-experiments/umbradb-tapes/releases/tag/v0.10.0-tapes-2026-11-09) for the delayed-upgrade tapes (its manifest and checksums are under [`releases/v0.10.0-tapes-2026-11-09/`](releases/v0.10.0-tapes-2026-11-09/)). The [collection tag](https://github.com/midnight-experiments/umbradb-tapes/tree/v0.10.0-rc.1) pins the original seven-tape inventory. The same manifest and checksums are committed under [`releases/v0.10.0-rc.1/`](releases/v0.10.0-rc.1/).
 
 For the full collection, run this in the download directory:
 
